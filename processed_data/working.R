@@ -125,7 +125,47 @@ work_gl$The_affected_side <- as.character(gsub(2,"Right" , gsub(1,"Left" ,gsub(3
 work_gl$The_affected_side <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$The_affected_side)))
 work_gl$S_convulsive_syndrome <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$S_convulsive_syndrome)))
 
+work_gl$S_convulsive_syndrome <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$S_convulsive_syndrome)))
+#
+work_gl$The_affected_side <- as.character(gsub(2,"Right" , gsub(1,"Left" ,gsub(3, "both_sides", gsub(4, "corpus_callosum", work_gl$The_affected_side)))))
+#
+work_gl$Lobe <- as.character(gsub(2,"temporal" , gsub(1,"frontal" ,
+                                                      gsub(3, "occipital", gsub(4, "insular", 
+                                                                                gsub(5, "parietal",gsub(6, "thalamus", work_gl$Lobe)))))))
+#
+work_gl$Consciousness <- as.character(gsub(2,"deep_stun" , gsub(1,"moderate_stun" ,
+                                                                gsub(3, "stupor", gsub(4, "coma", 
+                                                                                       gsub(0, "clear", work_gl$Consciousness))))))
+#
+work_gl$Headache <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$Headache)))
+Nausea
+#
+work_gl$Nausea <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$Nausea)))
+
+#Speech_disorders
+work_gl$Speech_disorders <- as.character(gsub(2,"ability_communicate" ,
+                                              gsub(3, "no_ability_communicate", gsub(4, "inability_communicate", 
+#Fundus_congestion
+work_gl$Fundus_congestion <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$Fundus_congestion)))
+#Complications
+
+work_gl$Complications <- as.character(gsub(2,"edema" , gsub(1,"hem" ,
+                                                      gsub(3, "inflammatory_intracranial", gsub(4, "inflammatory_extracranial", 
+                                                                                gsub(5, "death",gsub(0, "false", work_gl$Complications)))))))
+#Complications_neurological
+work_gl$Complications_neurological <- as.character(gsub(0,"False" , gsub(1,"cerebral" , gsub(2,"focal" ,work_gl$Complications_neurological))))
+
+#S_clear_tumor_edges
+work_gl$S_clear_tumor_edges <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$S_clear_tumor_edges)))
+
+#S_cystic_component
+work_gl$S_clear_tumor_edges <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$S_clear_tumor_edges)))
+
+#S_dist_more_80
+work_gl$S_dist_more_80 <- as.character(gsub(0,"False" , gsub(1,"True" , work_gl$S_dist_more_80)))
+
 
 
 
 raw_glioma$S_convulsive_syndrome
+
